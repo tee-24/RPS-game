@@ -1,38 +1,59 @@
-// <!-- Instruction pop up -->
-// let opentbn = document.getElementById('open-help');
-// let closebtn = document.getElementById('close-help');
-// let help = document.getElementById('help');
-
-// opentbn.addEventListener('click', () => {
-//     help.classList.add('open');
-// });
-
-// closebtn.addEventListener('click', () => {
-//     help.classList.remove('open');
-// });
-
-
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-            document.getElementsById('instructions').addEventListener('click', () => {
-                alert('You clicked instructions!')
-            });
+    let help = document.getElementById('instructions');
+    help.addEventListener('click', () => {
+        alert("You clicked instructions!");
+    }); 
+    
 
-        }
 
-function runGame() {
+
+    runGame(userChoice);  
+})
+
+let choices = document.getElementsByClassName('choice');
+
+for (let choice of choices) {
+    choice.addEventListener('click', () => {
+        let userChoice = choice.textContent;
+        console.log(userChoice);
+    })
+    }
+
+
+function runGame(){
+
     const options = ['rock', 'paper', 'scissors'];
 
-    const computerChoice = options[Math.floor(Math.random() * 3)];
+    let computerChoice = options[Math.floor(Math.random()*3)];
+    console.log(computerChoice);
 
-    
+    if (userChoice === computerChoice) {
+        console.log("Tie!");
+    }
+    else {
+        switch(userChoice) {
+            case 'rock':
+                result = (computerChoice === 'paper') ? "You lost" : "You win";
+                break;
+            case 'paper':
+                result = (computerChoice === 'scissors') ? "You lost" : "You win";
+                break;
+            case 'scissors':
+                result = (computerChoice === 'rock') ? "You lost" : "You win";
+                break;
+        }
+    }
 
 
 
 }
 
-// function findWinner() {
 
-//         }
+
+
+
+
+
