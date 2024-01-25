@@ -9,17 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
 
-
     runGame(userChoice);  
 })
 
-let choices = document.getElementsByClassName('choice');
+function getUserChoice() {
+    let choices = document.getElementsByClassName('choice');
 
-for (let choice of choices) {
-    choice.addEventListener('click', () => {
+    for (let choice of choices) {
+        choice.addEventListener('click', () => {
         let userChoice = choice.textContent;
         console.log(userChoice);
     })
+    }
+}
+
+
+function displayUserChoice() {
+    let display = document.getElementById('user-choice');
+    display.textContent = `You chose ${userChoice}`;
     }
 
 
@@ -29,6 +36,10 @@ function runGame(){
 
     let computerChoice = options[Math.floor(Math.random()*3)];
     console.log(computerChoice);
+
+    getUserChoice();
+    
+    displayUserChoice();
 
     if (userChoice === computerChoice) {
         console.log("Tie!");
