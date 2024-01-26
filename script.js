@@ -1,16 +1,16 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
-document.addEventListener("DOMContentLoaded", () => {
 
-    let help = document.getElementById('instructions');
+let help = document.getElementById('instructions');
+
+if (help) {
     help.addEventListener('click', () => {
         alert("You clicked instructions!");
     }); 
+}
     
 
-
-    runGame(userChoice);  
-})
+runGame();  
 
 function getUserChoice() {
     let choices = document.getElementsByClassName('choice');
@@ -19,6 +19,7 @@ function getUserChoice() {
         choice.addEventListener('click', () => {
         let userChoice = choice.textContent;
         console.log(userChoice);
+        displayUserChoice();
     })
     }
 }
@@ -26,9 +27,17 @@ function getUserChoice() {
 
 function displayUserChoice() {
     let display = document.getElementById('user-choice');
-    display.textContent = `You chose ${userChoice}`;
-    }
 
+    if (display) {
+        display.textContent = `You chose ${userChoice}`;
+    }
+}
+
+
+//  function displayComputerChoice() {
+//     let display = document.getElementById('computer-choice');
+//     display.textContent = `You chose ${computerChoice}`;
+//     }
 
 function runGame(){
 
@@ -36,10 +45,12 @@ function runGame(){
 
     let computerChoice = options[Math.floor(Math.random()*3)];
     console.log(computerChoice);
+    document.getElementById('computer-choice').textContent = `You chose ${computerChoice}`;
+    
 
     getUserChoice();
-    
-    displayUserChoice();
+
+    // displayComputerChoice();
 
     if (userChoice === computerChoice) {
         console.log("Tie!");
