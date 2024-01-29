@@ -6,33 +6,43 @@ let game = document.getElementById('start-game');
 let playerOptions = `<button>1 Player</button>
 <button>2 Players</button>`
 
-if (game) {
-    game.addEventListener('click', () => {
+if (help) {
+    help.addEventListener('click', () => {
         alert("You clicked instructions!");
     });
-} else if (help) {
-    help.addEventListener('click', () => {
-        alert("You clicked start!");
-        // numberOfPlayers();
-    });
+}
+
+if (game) {
+    game.addEventListener('click', () => {
+        let options = document.getElementsByClassName('game-area');
+
+        options.innerHTML = playerOptions;
+    }); 
+}
+
+    // if (game) {
+    //     game.addEventListener('click', () => {
+    //         alert("You clicked start!");
+    //         // numberOfPlayers();
+    //     });
 
 
     // for (let playerNumber of playerOptions) {
     //     playerNumber.addEventListener('click', () => {
             
     //         if (playerNumber === '1 Player') {
-    //             Go to game.html
+    //             console.log('Go to game.html')
     //         }
     //         else {
-    //             go to 2 player pg
+    //             console.log('go to 2 player pg')
     //         }
 
     //     })
     // }
-}
 
-function numberOfPlayers() {
-    let options = document.getElementsByClassName('game-area');
 
-    options.innerHTML = playerOptions;
-}
+// function numberOfPlayers() {
+//     let options = document.getElementsByClassName('game-area');
+
+//     options.innerHTML = playerOptions;
+// }
