@@ -6,12 +6,12 @@ let game = document.getElementById('start-game');
 let playerOptions = `<button>1 Player</button>
 <button>2 Players</button>`
 
-if (help) {
-    help.addEventListener('click', () => {
+if (game) {
+    game.addEventListener('click', () => {
         alert("You clicked instructions!");
     });
-} else if (game) {
-    game.addEventListener('click', () => {
+} else if (help) {
+    help.addEventListener('click', () => {
         alert("You clicked start!");
         // numberOfPlayers();
     });
@@ -19,8 +19,13 @@ if (help) {
 
     // for (let playerNumber of playerOptions) {
     //     playerNumber.addEventListener('click', () => {
-    //         userChoice = (choice.textContent).toLowerCase();
-    //         document.getElementById('user-choice').textContent = `You chose: ${userChoice}`;
+            
+    //         if (playerNumber === '1 Player') {
+    //             Go to game.html
+    //         }
+    //         else {
+    //             go to 2 player pg
+    //         }
 
     //     })
     // }
