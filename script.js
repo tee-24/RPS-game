@@ -8,50 +8,25 @@ if (help) {
         alert("You clicked instructions!");
     }); 
 }
-    
+let userChoice;
+let computerChoice;
 
-runGame();  
 
 function getUserChoice() {
     let choices = document.getElementsByClassName('choice');
 
     for (let choice of choices) {
         choice.addEventListener('click', () => {
-        let userChoice = choice.textContent;
+        userChoice = choice.textContent;
         console.log(userChoice);
-        displayUserChoice();
+        document.getElementById('user-choice').textContent = `You chose ${userChoice}`;
+        checkWinner();
     })
     }
 }
 
-
-function displayUserChoice() {
-    let display = document.getElementById('user-choice');
-
-    if (display) {
-        display.textContent = `You chose ${userChoice}`;
-    }
-}
-
-
-//  function displayComputerChoice() {
-//     let display = document.getElementById('computer-choice');
-//     display.textContent = `You chose ${computerChoice}`;
-//     }
-
-function runGame(){
-
-    const options = ['rock', 'paper', 'scissors'];
-
-    let computerChoice = options[Math.floor(Math.random()*3)];
-    console.log(computerChoice);
-    document.getElementById('computer-choice').textContent = `You chose ${computerChoice}`;
-    
-
-    getUserChoice();
-
-    // displayComputerChoice();
-
+function checkWinner() {
+    userChoice.toLowerCase();
     if (userChoice === computerChoice) {
         console.log("Tie!");
     }
@@ -68,13 +43,37 @@ function runGame(){
                 break;
         }
     }
+}
+
+
+
+//  function displayComputerChoice() {
+//     let display = document.getElementById('computer-choice');
+//     display.textContent = `Computer chose ${computerChoice}`;
+//     }
+
+function runGame(){
+
+    const options = ['rock', 'paper', 'scissors'];
+
+    getUserChoice();
+
+     computerChoice = options[Math.floor(Math.random()*3)];
+    console.log(computerChoice);
+    document.getElementById('computer-choice').textContent = `Computer chose: ${computerChoice}`;
+    
+    
+
+    // displayComputerChoice();
+
+    
 
 
 
 }
 
 
-
+runGame();  
 
 
 
