@@ -49,7 +49,12 @@ function checkWinner() {
                 result = (playerTwoChoice === 'rock') ? "Player 2 wins" : "Player 1 wins";
                 break;
         }
-        console.log(result);
+        if (result === "Player 1 wins") {
+            incrementPlayer1Score();
+        }
+        else if (result === "Player 2 wins") {
+            incrementPlayer2Score();
+        }
     }
 }
 
@@ -63,3 +68,19 @@ function runGame() {
 
 
 runGame();
+
+/** 
+ * Gets player 1 score from the DOM and increments it by 1 
+*/
+function incrementPlayer1Score(){
+    let player1Score = parseInt(document.getElementById('player1-score').innerText);
+    document.getElementById('player1-score').innerText = ++player1Score;
+}
+
+/** 
+ * Gets player 2 score from the DOM and increments it by 1 
+*/
+function incrementPlayer2Score(){
+    let player2Score = parseInt(document.getElementById('player2-score').innerText);
+    document.getElementById('player2-score').innerText = ++player2Score;
+}
