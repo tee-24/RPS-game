@@ -16,12 +16,12 @@ main {
   flex: 1 0 auto;
 }
 
-.game-area {
+.game-area, .game-box {
   display: flex;
   flex-direction: column;
   padding: 50px;
 }
-.btn, .choice {
+.btn, .choice, .choice1, .choice2 {
   font-size: 20px;
   border-radius: 25px;
   width: 200px;
@@ -42,16 +42,13 @@ button:hover {
     width: 75%;
     height: 45%;
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.774); /* Black w/ opacity */
   }
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
     color: #aaa;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
+    margin: 2em; /* 15% from the top and centered */
+    font-size: 18px;
     width: 80%; /* Could be more or less, depending on screen size */
     display: flex;
     flex-direction: column;
@@ -60,8 +57,8 @@ button:hover {
   /* The Close Button */
   .close {
     position: relative;
-    right: 0.5em;
-    top: -0.5em;
+    right: -7.8em;
+    top: -1em;
     color: #aaa;
     float: right;
     font-size: 28px;
