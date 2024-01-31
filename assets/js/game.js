@@ -36,7 +36,7 @@ function getUserChoice() {
 function checkWinner() {
     
         if (userChoice === computerChoice) {
-            result = "Tie!";
+            result = "It's a Tie!";
         } 
         else {
             switch (userChoice) {

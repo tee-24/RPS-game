@@ -24,11 +24,13 @@ main {
   padding: 50px;
   justify-content: space-around;
 }
-#start-game, #instructions {
+.btn, .choice {
   font-size: 20px;
   border-radius: 25px;
+  width: 200px;
+  height: 50px;
 }
-#start-game:hover, #instructions:hover {
+button:hover {
   background-color: aqua;
 
 }
@@ -69,6 +71,16 @@ main {
     text-decoration: none;
     cursor: pointer;
   }
+/* 1 player page */
+.game-box {
+  border: 2px solid lightcoral;
+  border-radius: 25px;
+  background-color: lightcoral;
+}
+.display {
+  padding-top: 20px;
+  font-size: 20px;
+}
 
 footer {
     text-align: center;
