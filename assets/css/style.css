@@ -1,5 +1,36 @@
+/* Google font import */
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  font-family: "Graduate", serif;
+}
+
 header {
-    text-align: center;
+  text-align: center;
+  font-size: 20px;
+}
+main {
+  flex: 1 0 auto;
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* border: 2px solid black; */
+  padding: 50px;
+  justify-content: space-around;
+}
+#start-game, #instructions {
+  font-size: 20px;
+  border-radius: 25px;
+}
+#start-game:hover, #instructions:hover {
+  background-color: aqua;
+
 }
 
 /* The Modal (background) */
