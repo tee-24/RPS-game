@@ -15,7 +15,8 @@ if (game) {
     game.addEventListener('click', () => {
         let options = document.querySelector('.game-area');
         let playerOptions = `<a href="game.html"><button>1 Player</button></a>
-<button>2 Players</button>`;
+        <a href="twoplayer.html"><button>2 Players</button></a>`;
+
 
         options.innerHTML = playerOptions;
     }); 
