@@ -1,11 +1,11 @@
 /* Google font import */
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 
-html{
+html {
   height: 100%;
 }
 
-body{
+body {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -17,95 +17,114 @@ header {
   text-align: center;
   font-size: 20px;
 }
+
 main {
   flex: 1 0 auto;
 }
 
-.game-area, .game-box {
+.game-area,
+.game-box {
   display: flex;
   flex-direction: column;
   padding: 50px;
   align-items: center;
 }
-.btn, .choice, .choice1, .choice2 {
+
+.btn,
+.choice,
+.choice1,
+.choice2 {
   font-size: 20px;
   border-radius: 25px;
   width: 300px;
   height: 50px;
 }
-#reset{
+
+#reset {
   font-size: 25px;
   padding: 0 10px;
 }
+
 #back {
   font-size: 20px;
-    width: 200px;
-    height: 30px;
-    display: flex;
-    text-decoration: none;
-    flex-direction: column;
-    align-items: center
+  width: 200px;
+  height: 30px;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  align-items: center
 }
+
 a {
   text-decoration: none;
 }
+
 .homepage {
   display: flex;
   justify-content: center;
   margin: 1em;
 }
+
 button:hover {
   background-color: aqua;
 }
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 3em;
-    top: 15rem;
-    width: 75%;
-    height: 45%;
-    background-color: rgb(0,0,0); /* Fallback color */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    color: #aaa;
-    margin: 2em; /* 15% from the top and centered */
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* The Close Button */
-  .close {
-    position: fixed;
-    right: 2.5em;
-    top: 9em;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 3em;
+  top: 15rem;
+  width: 75%;
+  height: 45%;
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  color: #aaa;
+  margin: 2em;
+  /* 15% from the top and centered */
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The Close Button */
+.close {
+  position: fixed;
+  right: 2.5em;
+  top: 9em;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* 1 player page */
 .game-box {
   border: 2px solid lightcoral;
   border-radius: 25px;
   background-color: lightcoral;
 }
+
 .display {
   padding-top: 20px;
   font-size: 20px;
 }
+
 .score {
   display: flex;
   justify-content: space-between
@@ -116,33 +135,40 @@ footer {
   justify-content: center;
   padding: 1.5em;
 }
+
 /* Media query: tablets and larger (768px+) */
 @media screen and (min-width:768px) {
   .modal {
     left: 6em;
   }
+
   .modal-content {
     margin: 0;
   }
+
   .close {
     right: 4.5em;
   }
 }
+
 /* Media query: laptops and larger (992px+) */
 @media screen and (min-width:992px) {
   .modal {
     left: 8em;
   }
+
   .close {
     right: 5.5em;
   }
 }
+
 /* Media query: screens 1200px and larger (1200px+) */
 @media screen and (min-width:1200px) {
   .modal {
     left: 11em;
     height: 50%;
   }
+
   .close {
     right: 7.5em;
   }

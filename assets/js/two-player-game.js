@@ -7,18 +7,16 @@ let outcome = document.getElementById('result');
 document.addEventListener("DOMContentLoaded", () => {
     runGame();
 
-    let reset = document.getElementById('reset');
-reset.addEventListener('click', () => {
-    toggle();
-
     // Add event listener to play again button
-    let clearDisplay = document.getElementsByClassName('game-box')[2];
-    clearDisplay.innerHTML = `<p id="player1-choice"></p>
-    <p id="player2-choice"></p>
-    <p id="result"></p>
+    let reset = document.getElementById('reset');
+    reset.addEventListener('click', () => {
+        toggle();
 
-    <button id="reset">Play again</button>`
-});
+        let clearDisplay = document.getElementsByClassName('display-box')[0];
+        clearDisplay.innerHTML = `<p id="player1-choice"></p>
+    <p id="player2-choice"></p>
+    <p id="result"></p>`
+    });
 });
 
 function getPlayerOneChoice() {
@@ -49,7 +47,7 @@ function getPlayerTwoChoice() {
 function displayResult() {
     outcome.textContent = `${result}`;
     toggle();
-    }
+}
 
 function checkWinner() {
 
@@ -70,12 +68,10 @@ function checkWinner() {
         if (result === "Player 1 wins") {
             outcome.style.color = 'green';
             incrementPlayer1Score();
-        }
-        else if (result === "Player 2 wins") {
+        } else if (result === "Player 2 wins") {
             outcome.style.color = 'green';
             incrementPlayer2Score();
-        }
-        else {
+        } else {
             outcome.style.color = 'white';
         }
     }
@@ -92,16 +88,16 @@ function runGame() {
 
 /** 
  * Gets player 1 score from the DOM and increments it by 1 
-*/
-function incrementPlayer1Score(){
+ */
+function incrementPlayer1Score() {
     let player1Score = parseInt(document.getElementById('player1-score').innerText);
     document.getElementById('player1-score').innerText = ++player1Score;
 }
 
 /** 
  * Gets player 2 score from the DOM and increments it by 1 
-*/
-function incrementPlayer2Score(){
+ */
+function incrementPlayer2Score() {
     let player2Score = parseInt(document.getElementById('player2-score').innerText);
     document.getElementById('player2-score').innerText = ++player2Score;
 }
@@ -114,16 +110,14 @@ function toggle() {
     for (let choice1 of choices1) {
         if (choice1.disabled === true) {
             choice1.disabled = false;
-        }
-        else {
+        } else {
             choice1.disabled = true;
         }
     }
     for (let choice2 of choices2) {
         if (choice2.disabled === true) {
             choice2.disabled = false;
-        }
-        else {
+        } else {
             choice2.disabled = true;
         }
     }
