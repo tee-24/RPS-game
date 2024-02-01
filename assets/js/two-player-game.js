@@ -1,7 +1,25 @@
 let playerOneChoice;
 let playerTwoChoice;
 let result;
+let outcome = document.getElementById('result');
 
+// Wait for the DOM to finish loading before running the game
+document.addEventListener("DOMContentLoaded", () => {
+    runGame();
+
+    let reset = document.getElementById('reset');
+reset.addEventListener('click', () => {
+    toggle();
+
+    // Add event listener to play again button
+    let clearDisplay = document.getElementsByClassName('game-box')[2];
+    clearDisplay.innerHTML = `<p id="player1-choice"></p>
+    <p id="player2-choice"></p>
+    <p id="result"></p>
+
+    <button id="reset">Play again</button>`
+});
+});
 
 function getPlayerOneChoice() {
     let choices = document.getElementsByClassName('choice1');
@@ -29,8 +47,8 @@ function getPlayerTwoChoice() {
 }
 
 function displayResult() {
-    let outcome = document.getElementById('result');
     outcome.textContent = `${result}`;
+    toggle();
     }
 
 function checkWinner() {
@@ -50,10 +68,15 @@ function checkWinner() {
                 break;
         }
         if (result === "Player 1 wins") {
+            outcome.style.color = 'green';
             incrementPlayer1Score();
         }
         else if (result === "Player 2 wins") {
+            outcome.style.color = 'green';
             incrementPlayer2Score();
+        }
+        else {
+            outcome.style.color = 'white';
         }
     }
 }
@@ -66,8 +89,6 @@ function runGame() {
     getPlayerTwoChoice();
 }
 
-
-runGame();
 
 /** 
  * Gets player 1 score from the DOM and increments it by 1 
@@ -83,4 +104,27 @@ function incrementPlayer1Score(){
 function incrementPlayer2Score(){
     let player2Score = parseInt(document.getElementById('player2-score').innerText);
     document.getElementById('player2-score').innerText = ++player2Score;
+}
+
+
+function toggle() {
+    let choices1 = document.getElementsByClassName('choice1');
+    let choices2 = document.getElementsByClassName('choice2');
+
+    for (let choice1 of choices1) {
+        if (choice1.disabled === true) {
+            choice1.disabled = false;
+        }
+        else {
+            choice1.disabled = true;
+        }
+    }
+    for (let choice2 of choices2) {
+        if (choice2.disabled === true) {
+            choice2.disabled = false;
+        }
+        else {
+            choice2.disabled = true;
+        }
+    }
 }
