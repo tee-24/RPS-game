@@ -1,29 +1,29 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 
-var game = document.getElementById('start-game');
+let game = document.getElementById('start-game');
 
 game.addEventListener('click', () => {
 
   let options = document.querySelector('.game-area');
-  let playerOptions = `<a href="game.html"><button class="btn">1 Player</button><br></a>
+  let playerOptions = `<a href="game.html"><button class="btn">1 Player</button></a><br>
   <a href="twoplayer.html"><button class="btn">2 Players</button></a>`;
 
   options.innerHTML = playerOptions;
 }); 
 
 // Open modal when clicked
-var instruction = document.getElementById('instructions');
+let instruction = document.getElementById('instructions');
 
 // Get the modal
-var modal = document.getElementById("help");
+let modal = document.getElementById("help");
 
 instruction.addEventListener('click', () => {
   modal.style.display = 'block';
 })
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 span.addEventListener('click', () => {
   modal.style.display = 'none';

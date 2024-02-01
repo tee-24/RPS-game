@@ -1,6 +1,10 @@
 let userChoice;
 let computerChoice;
 let result;
+let choices = document.getElementsByClassName('choice');
+
+let reset = document.getElementById('reset')
+reset.addEventListener('click', toggle());
 
 
 function displayComputerChoice() {
@@ -19,7 +23,6 @@ function displayResult() {
     }
 
 function getUserChoice() {
-    let choices = document.getElementsByClassName('choice');
 
     for (let choice of choices) {
         choice.addEventListener('click', () => {
@@ -29,6 +32,7 @@ function getUserChoice() {
             displayComputerChoice();
             checkWinner();
             displayResult();
+            // toggle();
         })
     }
 }
@@ -81,4 +85,15 @@ function incrementUserScore(){
 function incrementComputerScore(){
     let computerScore = parseInt(document.getElementById('computer-score').innerText);
     document.getElementById('computer-score').innerText = ++computerScore;
+}
+
+function toggle() {
+    for (let choice of choices) {
+        if (choice.disabled === true) {
+            choice.disabled = false;
+        }
+        else {
+            choice.disabled = true;
+        }
+    }
 }
