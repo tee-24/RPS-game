@@ -116,4 +116,34 @@ footer {
   justify-content: center;
   padding: 1.5em;
 }
-
+/* Media query: tablets and larger (768px+) */
+@media screen and (min-width:768px) {
+  .modal {
+    left: 6em;
+  }
+  .modal-content {
+    margin: 0;
+  }
+  .close {
+    right: 4.5em;
+  }
+}
+/* Media query: laptops and larger (992px+) */
+@media screen and (min-width:992px) {
+  .modal {
+    left: 8em;
+  }
+  .close {
+    right: 5.5em;
+  }
+}
+/* Media query: screens 1200px and larger (1200px+) */
+@media screen and (min-width:1200px) {
+  .modal {
+    left: 11em;
+    height: 50%;
+  }
+  .close {
+    right: 7.5em;
+  }
+}
