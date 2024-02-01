@@ -52,7 +52,8 @@ main {
   display: flex;
   text-decoration: none;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  white-space: nowrap;
 }
 
 a {
@@ -88,7 +89,7 @@ button:hover {
 /* Modal Content/Box */
 .modal-content {
   color: #aaa;
-  margin: 2em;
+  margin: 1em;
   /* 15% from the top and centered */
   font-size: 18px;
   display: flex;
@@ -148,6 +149,9 @@ footer {
 
   .close {
     right: 4.5em;
+  }
+  .score {
+    font-size: 20px;
   }
 }
 
